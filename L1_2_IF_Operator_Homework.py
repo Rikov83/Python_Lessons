@@ -36,7 +36,7 @@ b = float(input("введите номер клетки по вертикали 
 
 Chess_field_color = (int(a) + int(b)) % 2  # если сумма координат четная, то цвет ячейки четный, нечетная - белый
 
-if 9 > a > 0 and 9 > b > 0:
+if 9 > int(a) > 0 and 9 > int(b) > 0:
     if Chess_field_color == 1:
         print("field is WHITE")
     else:
