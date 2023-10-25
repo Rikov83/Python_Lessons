@@ -4,7 +4,7 @@
 # Ввод:Death there mirth way the noisy merit
 # Вывод:['merit', 'noisy', 'the', 'way', 'mirth', 'there', 'Death']
 # Подсказка: вспомните, как работают срезы или метод reverse, изученный на занятии
-from typing import List
+# from typing import List
 
 print("Task1 - sentence split and reversed")
 print("введите предложение: ", end='')
