@@ -11,10 +11,10 @@ def palindrome(text):
     text1 = text.replace(" ", '')
     text2 = text1[::-1]
 
-    if text1 == text2:
-        return text2, True
+    if text1.lower() == text2.lower():
+        return text2.lower(), True
     else:
-        return text2, False
+        return text2.lower(), False
 
 
 print(palindrome(input("введите текст на проверку палиндрома: ")))
