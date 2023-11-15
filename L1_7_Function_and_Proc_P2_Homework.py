@@ -6,8 +6,18 @@ print('Task1 - sum of 2 lists')
 lst1 = [int(s) for s in input("введите числа для сложения в список1: ").split()]
 lst2 = [int(s) for s in input("введите числа для сложения в список2: ").split()]
 
-result = map(lambda x, y: x + y, lst1, lst2)
-print(f'сумма списков: {list(result)}')
+a = ([0, ] * (len(lst2) - len(lst1)) + lst1)  # расширяем до равных размеров за счет 0 слева
+b = ([0, ] * (len(lst1) - len(lst2)) + lst2)
+
+lst1.extend([0, ] * (len(lst2) - len(lst1)))  # расширяем до равных размеров за счет 0 справа
+lst2.extend([0, ] * (len(lst1) - len(lst2)))
+
+result1 = map(lambda x, y: x + y, lst1, lst2)
+result2 = map(lambda x, y: x + y, a, b)
+
+print(f'сумма списков: {list(result1)}, {list(result2)}')
+print(lst1, lst2)
+print(a, b)
 
 # Задача 2. Напишите программу на Python для поиска чисел из списка,
 # кратных девятнадцати или тринадцати, используя filter и Lambda.
@@ -24,10 +34,10 @@ print(f' числа кратные 19 или 13: {set(result)}')
 # элемента в списке при помощи reduce
 
 from functools import reduce
+
 print('Task3 - Max value in list')
 lst1 = [int(s) for s in input("введите список чисел: ").split()]
 
 result = reduce(lambda x, y: max(x, y), lst1)
 
 print(f' максимальное число из списка: {result}')
-
