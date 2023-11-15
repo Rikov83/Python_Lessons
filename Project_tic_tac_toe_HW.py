@@ -147,14 +147,14 @@ def main():
             board[player_i] = player_symb
             print(f"Доска после вашего хода {player_symb}")
             draw_board(board)
-            if check_win(board, computer_symb):     # проверка на победителя
+            if check_win(board, player_symb):     # проверка на победителя
                 break
         else:   # этот блок всё то же самое, но если первый ходит игрок
             player_i = get_player_move(board, player_symb)
             board[player_i] = player_symb
             print(f"Доска после вашего хода {player_symb}")
             draw_board(board)
-            if check_win(board, computer_symb):
+            if check_win(board, player_symb):
                 break
             computer_i = get_computer_move(board, computer_symb)
             board[computer_i] = computer_symb
